@@ -17,6 +17,7 @@ class App extends StatelessWidget {
       builder: (_, themeMode, _) {
         if (!kIsWeb && !kIsWasm && (Platform.isIOS || Platform.isMacOS)) {
           return CupertinoApp(
+            debugShowCheckedModeBanner: false,
             theme: CupertinoThemeData(
               brightness: themeMode == ThemeMode.dark
                   ? Brightness.dark
@@ -26,6 +27,7 @@ class App extends StatelessWidget {
           );
         }
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           themeMode: themeMode,
           theme: ThemeData.light(),
           darkTheme: ThemeData.dark(),
